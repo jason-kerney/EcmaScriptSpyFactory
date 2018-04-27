@@ -4,7 +4,7 @@
   "description": "Uses sinon and stubcontractor to build fake services that obey contracts and spies on each call.",
   "main": "index.js",
   "scripts": {
-    "test": "mocha"
+    "test": "node ./node_modules/mocha/bin/mocha ./tests/**/*.test.js"
   },
   "repository": {
     "type": "git",
@@ -15,5 +15,14 @@
   "bugs": {
     "url": "https://github.com/JKerney-HunterIndustries/EcmaScriptSpyFactory/issues"
   },
-  "homepage": "https://github.com/JKerney-HunterIndustries/EcmaScriptSpyFactory#readme"
+  "homepage": "https://github.com/JKerney-HunterIndustries/EcmaScriptSpyFactory#readme",
+  "dependencies": {
+    "approval-result-factory": "^0.1.5",
+    "dject": "^1.9.3",
+    "signet": "^6.6.3",
+    "sinon": "^4.5.0"
+  },
+  "devDependencies": {
+    "mocha": "^5.1.1"
+  }
 }
