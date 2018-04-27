@@ -7,7 +7,7 @@ function signet(
 
     typeHelper.alias('name', 'string');
     typeHelper.alias('maybe', 'variant<null, undefined, _>');
-    typeHelper.alias('existant', 'not<undefined, null>');
+    typeHelper.alias('existant', 'not<variant<undefined, null>>');
     typeHelper.extend('fakeObject', approvalResultFactory.types.isFakeObject);
     typeHelper.alias('apiEndPoints',
         `array
