@@ -1,0 +1,19 @@
+{
+  "name": "spyfactory",
+  "version": "0.0.0",
+  "description": "Uses sinon and stubcontractor to build fake services that obey contracts and spies on each call.",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JKerney-HunterIndustries/EcmaScriptSpyFactory.git"
+  },
+  "author": "Jason Kerney",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/JKerney-HunterIndustries/EcmaScriptSpyFactory/issues"
+  },
+  "homepage": "https://github.com/JKerney-HunterIndustries/EcmaScriptSpyFactory#readme"
+}
