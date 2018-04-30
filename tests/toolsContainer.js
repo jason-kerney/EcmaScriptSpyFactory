@@ -5,7 +5,6 @@ var config = {
     modulePaths: [
         '',
         'test-utilities',
-        'testTypes',
         '../app',
     ],
     allowOverride: false,

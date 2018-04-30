@@ -1,0 +1,17 @@
+{
+    "add.onCall": [
+        [
+            "Function: returnTwo [* => *]"
+        ]
+    ],
+    "addMore.onCall": [
+        [
+            "Function: proxy [* => *]"
+        ]
+    ],
+    "addAgain.onCall": [
+        [
+            "Function: proxy [* => *]"
+        ]
+    ]
+}

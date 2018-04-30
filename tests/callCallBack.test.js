@@ -4,7 +4,6 @@ describe('spyFactoryFactory', function () {
     const contextContainer = require('../djectContainer');
     const toolsContainer = require('./toolsContainer');
 
-    const stubcontractor = toolsContainer.build('stubcontractor');
     const signet = toolsContainer.build('signet');
     const { assert } = toolsContainer.build('chai');
 
@@ -15,7 +14,7 @@ describe('spyFactoryFactory', function () {
     beforeEach(function () {
         const testContainer = contextContainer.new();
 
-        spyFactory = testContainer.build('spyFactoryFactory')(stubcontractor);
+        spyFactory = testContainer.build('spyFactoryFactory')({});
     });
 
     describe('callCallBack', function () {

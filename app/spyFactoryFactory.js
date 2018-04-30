@@ -8,7 +8,7 @@ function spyFactoryFactory(
     const isExistant = signet.isTypeOf('existant');
 
 
-    function factory(stubcontractorConfig) {
+    function factory(stubcontractor) {
         function getEndPointName(endPoint) {
             if (signet.isTypeOf('array')(endPoint)) {
                 return endPoint[0];
@@ -17,7 +17,7 @@ function spyFactoryFactory(
         }
 
         function spyFactory(moduleFile, apiEndPoints, moduleName) {
-            let fake = stubcontractorConfig.getApiEndpoints(moduleFile, apiEndPoints.map(getEndPointName));
+            let fake = stubcontractor.getApiEndpoints(moduleFile, apiEndPoints.map(getEndPointName));
             fake.__name = isExistant(moduleName) ? moduleName : moduleFile;
 
             apiEndPoints.forEach(function (endPoint) {
