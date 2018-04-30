@@ -1,6 +1,6 @@
 {
   "name": "spyfactory",
-  "version": "0.1.2",
+  "version": "0.2.0",
   "description": "Uses sinon and stubcontractor to build fake services that obey contracts and spies on each call.",
   "main": "index.js",
   "scripts": {
@@ -25,6 +25,6 @@
   "devDependencies": {
     "chai": "^4.1.2",
     "mocha": "^5.1.1",
-    "stubcontractor": "^0.5.3"    
+    "stubcontractor": "^0.5.3"
   }
 }
