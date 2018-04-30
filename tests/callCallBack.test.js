@@ -17,9 +17,9 @@ describe('spyFactoryFactory', function () {
         spyFactory = testContainer.build('spyFactoryFactory')({});
     });
 
-    describe('callCallBack', function () {
+    describe('callCallback', function () {
         it('will calls the last parameter as a callback of a function it is given', function () {
-            const callbackCaller = spyFactory.callCallBack();
+            const callbackCaller = spyFactory.callCallback();
             let called = false;
 
             callbackCaller(1, 'second parameter', 3, function () {
@@ -30,7 +30,7 @@ describe('spyFactoryFactory', function () {
         });
 
         it('will calls the last parameter as a callback of a function it is given even if it is the only parameter', function () {
-            const callbackCaller = spyFactory.callCallBack();
+            const callbackCaller = spyFactory.callCallback();
             let called = false;
 
             callbackCaller(function () {
@@ -41,7 +41,7 @@ describe('spyFactoryFactory', function () {
         });
 
         it('will call the callback with nothing if nothing was given to it', function () {
-            const callbackCaller = spyFactory.callCallBack();
+            const callbackCaller = spyFactory.callCallback();
 
             callbackCaller(1, 'second parameter', 3, function (error, data) {
                 assert.isOk(isUndefined(error), 'Error was expected to have no value');
@@ -53,7 +53,7 @@ describe('spyFactoryFactory', function () {
             const expectedErrorParameter = 'Error Parameter';
             const expectedDataParameter = 'Data Parameter';
 
-            const callbackCaller = spyFactory.callCallBack(expectedErrorParameter, expectedDataParameter);
+            const callbackCaller = spyFactory.callCallback(expectedErrorParameter, expectedDataParameter);
 
             callbackCaller(1, 'second parameter', 3, function (error, data) {
                 assert.equal(expectedErrorParameter, error);

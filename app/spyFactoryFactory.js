@@ -38,7 +38,7 @@ function spyFactoryFactory(
             return fake;
         }
 
-        function callCallBack(error, data) {
+        function callCallback(error, data) {
             return function (...args) {
                 let callback = args.pop();
                 if (signet.isTypeOf('function')(callback)) {
@@ -51,9 +51,9 @@ function spyFactoryFactory(
             };
         }
 
-        spyFactory.callCallBack = signet.enforce(
+        spyFactory.callCallback = signet.enforce(
             'error:maybe<*>, data:maybe<*> => function<() => undefined>',
-            callCallBack
+            callCallback
         );
 
         return signet.enforce(
