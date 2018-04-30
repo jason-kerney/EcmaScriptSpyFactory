@@ -51,7 +51,10 @@ function spyFactoryFactory(
             };
         }
 
-        spyFactory.callCallBack = callCallBack;
+        spyFactory.callCallBack = signet.enforce(
+            'error:maybe<*>, data:maybe<*> => function<() => undefined>',
+            callCallBack
+        );
 
         return signet.enforce(
             'moduleFile:string, apiEndPoints:apiEndPoints, maybe<moduleName:name> => fakeObject',
