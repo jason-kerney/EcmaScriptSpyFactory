@@ -1,5 +1,15 @@
 # spyFacory
 
+<a href='https://www.npmjs.com/package/spyfactory'>
+    <img src='https://img.shields.io/npm/v/spyfactory.svg?link=https://www.npmjs.com/package/spyfactory&?link=https://www.npmjs.com/package/spyfactory' alt='NPM Version' /> 
+</a> <a href='https://npm-stat.com/charts.html?package=spyfactory'>
+    <img src='https://img.shields.io/npm/dt/spyfactory.svg' alt='NPM Downloads'/>
+</a> <a href='https://opensource.org/licenses/MIT'>
+    <img src='https://img.shields.io/npm/l/spyfactory.svg' alt='License MIT'/>
+</a> <a href='https://david-dm.org/JKerney-HunterIndustries/spyfactory'>
+    <img src='https://david-dm.org/JKerney-HunterIndustries/spyfactory.svg' alt='Dependencies' />
+</a>
+
 **What?**
 
 A spy factory creates service fakes within node, that enforce the call contract on methods.
