@@ -2,7 +2,7 @@
 
 function spyFactoryFactory(
     signet,
-    sinon,
+    sinon
 ) {
     const isString = signet.isTypeOf('string');
     const isExistant = signet.isTypeOf('existant');
