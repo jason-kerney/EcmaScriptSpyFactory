@@ -38,10 +38,12 @@ function spyFactoryFactory(
             return fake;
         }
 
+        const isFunction = signet.isTypeOf('function');
+
         function callCallback(error, data) {
             return function (...args) {
                 let callback = args.pop();
-                if (signet.isTypeOf('function')(callback)) {
+                if (isFunction(callback)) {
                     if (isExistant(error) || isExistant(data)) {
                         callback(error, data);
                     } else {
@@ -51,10 +53,21 @@ function spyFactoryFactory(
             };
         }
 
+        function callCallbackVia(wrapper) {
+            return function (...args) {
+                let callback = args.pop();
+                if (isFunction(callback)) {
+                    wrapper(callback);
+                }
+            };
+        }
+
         spyFactory.callCallback = signet.enforce(
             'error:maybe<*>, data:maybe<*> => function<() => undefined>',
             callCallback
         );
+
+        spyFactory.callCallbackVia = callCallbackVia;
 
         return signet.enforce(
             'moduleFile:string, apiEndPoints:apiEndPoints, maybe<moduleName:name> => fakeObject',
