@@ -1,6 +1,6 @@
 {
   "name": "spyfactory",
-  "version": "0.3.3",
+  "version": "0.3.4",
   "description": "Uses sinon and stubcontractor to build fake services that obey contracts and spies on each call.",
   "main": "index.js",
   "scripts": {
