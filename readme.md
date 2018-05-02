@@ -166,3 +166,33 @@ function callbackCaller(...args) {
 ```
 
 Where 'givenError' and 'givenData' are the parameters passed to 'callCallback'.
+
+---
+
+## Call a callback via
+
+This allows the callback to be passed to a function that will call the callback.
+
+```JavaScript
+let stuffHappend = false;
+
+const fakeObject = spyFactory(
+                'myModule',
+                [
+                    ['asyncAdd', spyFactory.callCallbackVia(callback => callback(null, stuffHappend))],
+                ]
+            );
+```
+
+Later ..
+
+```JavaScript
+stuffHappend = true;
+fakeObject.asyncAdd((error, data) => {
+    if(data) {
+        console.log('Got it!');
+    }
+});
+```
+
+Because ```stuffHappend``` is later set to ```true``` then the console will log "Got it!".
