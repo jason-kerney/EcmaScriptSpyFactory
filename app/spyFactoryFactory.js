@@ -72,7 +72,10 @@ function spyFactoryFactory(
             callCallback
         );
 
-        spyFactory.callCallbackVia = callCallbackVia;
+        spyFactory.callCallbackVia = signet.enforce(
+            'wrapper:function<callback => undefined> => function',
+            callCallbackVia
+        );
 
         return signet.enforce(
             'moduleFile:string, apiEndPoints:apiEndPoints, maybe<moduleName:name> => fakeObject',

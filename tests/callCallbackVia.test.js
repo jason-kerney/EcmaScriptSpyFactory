@@ -1,6 +1,6 @@
 'use strict';
 
-describe('spyFactoryFactory',function () {
+describe('spyFactoryFactory', function () {
     const toolsContainer = require('./toolsContainer');
     const contextContainer = require('../djectContainer');
 
@@ -17,7 +17,7 @@ describe('spyFactoryFactory',function () {
     describe('callCallbackVia', function () {
         it('calls a function given to it', function () {
             let called = false;
-            let caller = spyFactory.callCallbackVia(() => called = true);
+            let caller = spyFactory.callCallbackVia(() => { called = true; });
 
             caller(() => { });
 
@@ -28,7 +28,7 @@ describe('spyFactoryFactory',function () {
             let called = false;
             let caller = spyFactory.callCallbackVia((callback) => callback());
 
-            caller(1, 2, 3, () => called = true);
+            caller(1, 2, 3, () => { called = true; });
 
             assert.isOk(called, 'Caller did not pass the callback into the wrapping function');
         });

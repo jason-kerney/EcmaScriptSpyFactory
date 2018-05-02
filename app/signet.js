@@ -6,9 +6,11 @@ function signet(
     const typeHelper = require('signet')();
 
     typeHelper.alias('name', 'string');
+    typeHelper.alias('error', '*');
     typeHelper.alias('maybe', 'variant<null, undefined, _>');
     typeHelper.alias('existant', 'not<variant<undefined, null>>');
     typeHelper.extend('fakeObject', approvalResultFactory.types.isFakeObject);
+    typeHelper.alias('callback', 'function<maybe<error>, maybe<*> => undefined>');
     typeHelper.alias('apiEndPoints',
         `array
             <
