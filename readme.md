@@ -105,6 +105,39 @@ If you do not want to spy on a function, you can add a third item to the the arr
 
 ---
 
+## renameTo
+
+Sometimes the internal implimentation uses a method who's name does not match what is attached to the object the service exports. Then it is handy to rename that service.
+
+**Example**
+```JavaScript
+// This is the module the spy is created from.
+// adder.js
+function addAndThenAddAgain(a, b c) {
+    return (a + b + c) * 2;
+}
+
+module.exports = {
+    addTwice: addAndThenAddAgain
+};
+```
+
+To create a fake of the above service:
+
+```JavaScript
+let adderFake = spyFactory(
+    'adder',
+    [
+        'addAndThenAddAgain'
+    ]
+);
+
+adderFake.addAndThenAddAgain.renameTo('addTwice');
+```
+---
+
+After ```renameTo``` is called, the ```addAndThenAddAgain``` is no longer a function on the adderFake. It has been renamed to ```addTwice```.
+
 ## Call a callback
 
 Spy factory, comes with a nice helper. If your methods conform to the convention that the callback is the last function **and** the function has the following signature:
