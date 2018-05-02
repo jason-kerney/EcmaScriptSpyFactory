@@ -33,6 +33,11 @@ function spyFactoryFactory(
                 } else {
                     fake[name].onCall(func);
                 }
+
+                fake[name].renameTo = function (newName) {
+                    fake[newName] = fake[name];
+                    fake[name] = undefined;
+                };
             });
 
             return fake;
