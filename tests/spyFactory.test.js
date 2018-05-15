@@ -19,7 +19,13 @@ describe('spyFactoryFactory', function () {
         let stubcontractorFake = {
             getApiEndpoints: function (_notUsed, apiEndpoints) {
                 let fakedObject = {};
-                apiEndpoints.forEach(endPoint => fakedObject[endPoint] = { onCall: sinon.spy() });
+                (
+                    apiEndpoints
+                        .filter(endPoint => !endPoint.startsWith('bad'))
+                        .forEach(endPoint =>
+                            fakedObject[endPoint] = { onCall: sinon.spy() }
+                        )
+                );
                 return fakedObject;
             }
         };
@@ -55,6 +61,7 @@ describe('spyFactoryFactory', function () {
                 'addMore.onCall': fakeObject.addMore.onCall.args,
                 'addAgain.onCall': fakeObject.addAgain.onCall.args,
             };
+
             this.verify(asInformationString(result));
         });
 
@@ -90,6 +97,24 @@ describe('spyFactoryFactory', function () {
                 'addAgain.onCall': fakeObject.addAgain.onCall.args,
             };
             this.verify(asInformationString(result));
+        });
+
+        it('thows a good exception if function does not exist', function () {
+
+            function createSpy() {
+                return spyFactory(
+                    'myModule',
+                    [
+                        'add',
+                        'addMore',
+                        'badFunction',
+                        'addAgain',
+                    ]
+                );
+            }
+
+
+            assert.throws(createSpy, /'badFunction' function does not exist/);
         });
     });
 });

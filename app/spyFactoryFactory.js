@@ -28,16 +28,21 @@ function spyFactoryFactory(
                     func = endPoint[1];
                 }
 
-                if (isString(endPoint) || endPoint.length < 3 || (endPoint[2])) {
-                    fake[name].onCall(sinon.spy(func));
-                } else {
-                    fake[name].onCall(func);
-                }
+                if (Boolean(fake[name])) {
+                    if (isString(endPoint) || endPoint.length < 3 || (endPoint[2])) {
+                        fake[name].onCall(sinon.spy(func));
+                    } else {
+                        fake[name].onCall(func);
+                    }
 
-                fake[name].renameTo = function (newName) {
-                    fake[newName] = fake[name];
-                    fake[name] = undefined;
-                };
+                    fake[name].renameTo = function (newName) {
+                        fake[newName] = fake[name];
+                        fake[name] = undefined;
+                    };
+                }
+                else {
+                    throw new Error(`'${name}' function does not exist`);
+                }
             });
 
             return fake;
