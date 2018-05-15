@@ -1,17 +1,17 @@
 {
     "add.onCall": [
         [
-            "Function: returnTwo [* => *]"
+            "Function: returnTwo"
         ]
     ],
     "addMore.onCall": [
         [
-            "Function: proxy [* => *]"
+            "Function: proxy"
         ]
     ],
     "addAgain.onCall": [
         [
-            "Function: proxy [* => *]"
+            "Function: proxy"
         ]
     ]
 }
