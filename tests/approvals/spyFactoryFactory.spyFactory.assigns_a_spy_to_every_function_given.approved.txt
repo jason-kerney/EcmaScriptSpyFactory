@@ -1,17 +1,17 @@
 {
     "add.onCall": [
         [
-            "Function: proxy"
+            "Function: anonymous function"
         ]
     ],
     "addMore.onCall": [
         [
-            "Function: proxy"
+            "Function: anonymous function"
         ]
     ],
     "addAgain.onCall": [
         [
-            "Function: proxy"
+            "Function: anonymous function"
         ]
     ]
 }
