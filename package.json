@@ -26,7 +26,7 @@
     "approvals": "^3.0.5",
     "approvals-config-factory": "^1.0.0",
     "chai": "^4.1.2",
-    "mocha": "^5.1.1",
+    "mocha": "^6.2.0",
     "object-information": "^0.4.2"
   }
 }
