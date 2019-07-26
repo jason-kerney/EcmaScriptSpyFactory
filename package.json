@@ -23,10 +23,10 @@
     "sinon": "^7.3.2"
   },
   "devDependencies": {
-    "approvals": "^2.1.2",
+    "approvals": "^3.0.5",
     "approvals-config-factory": "^1.0.0",
     "chai": "^4.1.2",
     "mocha": "^5.1.1",
-    "object-information": "^0.3.0"
+    "object-information": "^0.4.2"
   }
 }
